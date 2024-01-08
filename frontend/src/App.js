@@ -31,7 +31,7 @@ function App() {
           ))}
         </ul>
       </div>
-      <ScrollBox id="FaceBook Box" imgSrc="../Image/Facebook.jpeg" />
+      <ScrollBox id="FaceBook Box" imgSrc="/Facebook.jpeg" />
       <ScrollBox id="Instagram Box" imgSrc="../Image/Insta.jpeg" />
       <ScrollBox id="QQ Box" imgSrc="../Image/QQ.jpeg" />
       <ScrollBox id="Wechat Box" imgSrc="../Image/Wechat.jpeg" />
