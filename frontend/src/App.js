@@ -2,25 +2,42 @@ import React, { useEffect, useState } from 'react';
 import ScrollBox from './sytling/ScrollBox';
 
 function App() {
+  const [profile, setProfile] = useState({});
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    async function fetchPosts() {
+    async function fetchProfile() {
       try {
-        const response = await fetch('/api/posts'); // Fetch data from Flask API
+        const response = await fetch('http://localhost:5000/facebook/profile');
         const data = await response.json();
-        setPosts(data);
+        setProfile(data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching profile:', error);
       }
     }
 
+    async function fetchPosts() {
+      try {
+        const response = await fetch('http://localhost:5000/facebook/posts');
+        const data = await response.json();
+        setPosts(data);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
+    }
+
+    fetchProfile();
     fetchPosts();
   }, []);
 
   return (
     <div className="App">
       <h1>Social Media Dashboard</h1>
+      <div>
+        <h2>Facebook Profile</h2>
+        <p>ID: {profile.id}</p>
+        <p>Name: {profile.name}</p>
+      </div>
       <div>
         <h2>Posts</h2>
         <ul>
