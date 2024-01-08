@@ -4,11 +4,30 @@ import './ScrollBox.css';
 import { Element } from 'react-scroll';
 
 // ScrollBox.js
-const ScrollBox = ({ id, imgSrc, platform }) => (
+const ScrollBox = ({ id, platform }) => (
   <Element name={id}>
     <div className="scroll-box">
       <p>{platform}</p>
-      <img src={`${imgSrc}`} alt={`${id}`} />
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
+      <p>{platform}</p>
     </div>
   </Element>
 );

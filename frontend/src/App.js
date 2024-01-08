@@ -39,7 +39,7 @@ function App() {
         <p>Name: {profile.name}</p>
       </div>
       <div>
-        <h2>Posts</h2>
+        <h2>Posts 欸嘿 der~ der~ der~ der~ der~ der~ der~</h2>
         <ul>
           {posts.map(post => (
             <li key={post.id}>
@@ -51,22 +51,22 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="scroll-box-container">
-            <p className="box-description">Facebook ScrollBox</p>
-            <ScrollBox id="FaceBook Box" imgSrc="Facebook.jpeg" platform="Facebook" />
+            <p className="box-description">Facebook Scroll Box <img src={`Facebook.jpeg`} alt={`Facebook`} /></p>
+            <ScrollBox id="FaceBook Box" platform="Facebook" />
           </div>
           <div className="scroll-box-container">
-            <p className="box-description">Instagram ScrollBox</p>
-            <ScrollBox id="Instagram Box" imgSrc="Insta.jpeg" platform="Instagram" />
+            <p className="box-description">Instagram Scroll Box <img src={`Insta.jpeg`} alt={`Insta`} /></p>
+            <ScrollBox id="Instagram Box" platform="Instagram" />
           </div>
         </div>
         <div className="row">
           <div className="scroll-box-container">
-            <p className="box-description">QQ ScrollBox</p>
-            <ScrollBox id="QQ Box" imgSrc="QQ.jpeg" platform="QQ" />
+            <p className="box-description">QQ Scroll Box <img src={`QQ.jpeg`} alt={`QQ`} /></p>
+            <ScrollBox id="QQ Box" platform="QQ" />
           </div>
           <div className="scroll-box-container">
-            <p className="box-description">Wechat ScrollBox</p>
-            <ScrollBox id="Wechat Box" imgSrc="Wechat.jpeg" platform="Wechat" />
+            <p className="box-description">Wechat Scroll Box <img src={`Wechat.jpeg`} alt={`Wechat`} /></p>
+            <ScrollBox id="Wechat Box" platform="Wechat" />
           </div>
         </div>
       </div>
