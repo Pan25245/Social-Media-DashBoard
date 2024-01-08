@@ -31,7 +31,6 @@ function App() {
           ))}
         </ul>
       </div>
-      {/* Display four scrollable boxes with images */}
       <ScrollBox id="FaceBook Box" imgSrc="../Image/Facebook.jpeg" />
       <ScrollBox id="Instagram Box" imgSrc="../Image/Insta.jpeg" />
       <ScrollBox id="QQ Box" imgSrc="../Image/QQ.jpeg" />
