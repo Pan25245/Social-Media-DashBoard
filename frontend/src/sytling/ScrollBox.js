@@ -7,8 +7,8 @@ import { Element } from 'react-scroll';
 const ScrollBox = ({ id, imgSrc, platform }) => (
   <Element name={id}>
     <div className="scroll-box">
-      <img src={`${imgSrc}`} alt={`${id}`} />
       <p>{platform}</p>
+      <img src={`${imgSrc}`} alt={`${id}`} />
     </div>
   </Element>
 );

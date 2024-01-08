@@ -1,13 +1,25 @@
 /* ScrollBox.css */
+.container {
+  display: flex;
+  flex-direction: column; /* Display in columns */
+  gap: 20px; /* Adjust the gap between rows */
+}
+
+.row {
+  display: flex;
+  gap: 20px; /* Adjust the gap between images in a row */
+}
+
 .scroll-box {
-    height: 500px;
-    width: 500px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-  }
-  
-  img {
-    width: 100%;
-    height: auto;
-  }
+  flex: 1; /* Take up available space */
+  width: 47vw;
+  border: 1px solid #ccc;
+  margin: 1vw;
+}
+
+img {
+  width: 100px; /* Set the width of the image to 100% of the container */
+  height: 100px;
+  height: auto;
+
+}

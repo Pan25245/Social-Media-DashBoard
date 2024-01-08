@@ -31,10 +31,16 @@ function App() {
           ))}
         </ul>
       </div>
-      <ScrollBox id="FaceBook Box" imgSrc="/Facebook.jpeg" />
-      <ScrollBox id="Instagram Box" imgSrc="../Image/Insta.jpeg" />
-      <ScrollBox id="QQ Box" imgSrc="../Image/QQ.jpeg" />
-      <ScrollBox id="Wechat Box" imgSrc="../Image/Wechat.jpeg" />
+      <div className="container">
+        <div className="row">
+          <ScrollBox id="FaceBook Box" imgSrc="Facebook.jpeg" platform="Facebook" />
+          <ScrollBox id="Instagram Box" imgSrc="Insta.jpeg" platform="Instagram" />
+        </div>
+        <div className="row">
+          <ScrollBox id="QQ Box" imgSrc="QQ.jpeg" platform="QQ" />
+          <ScrollBox id="Wechat Box" imgSrc="Wechat.jpeg" platform="Wechat" />
+        </div>
+      </div>
     </div>
   );
 }
