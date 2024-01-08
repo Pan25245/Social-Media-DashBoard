@@ -33,12 +33,24 @@ function App() {
       </div>
       <div className="container">
         <div className="row">
-          <ScrollBox id="FaceBook Box" imgSrc="Facebook.jpeg" platform="Facebook" />
-          <ScrollBox id="Instagram Box" imgSrc="Insta.jpeg" platform="Instagram" />
+          <div className="scroll-box-container">
+            <p className="box-description">Facebook ScrollBox</p>
+            <ScrollBox id="FaceBook Box" imgSrc="Facebook.jpeg" platform="Facebook" />
+          </div>
+          <div className="scroll-box-container">
+            <p className="box-description">Instagram ScrollBox</p>
+            <ScrollBox id="Instagram Box" imgSrc="Insta.jpeg" platform="Instagram" />
+          </div>
         </div>
         <div className="row">
-          <ScrollBox id="QQ Box" imgSrc="QQ.jpeg" platform="QQ" />
-          <ScrollBox id="Wechat Box" imgSrc="Wechat.jpeg" platform="Wechat" />
+          <div className="scroll-box-container">
+            <p className="box-description">QQ ScrollBox</p>
+            <ScrollBox id="QQ Box" imgSrc="QQ.jpeg" platform="QQ" />
+          </div>
+          <div className="scroll-box-container">
+            <p className="box-description">Wechat ScrollBox</p>
+            <ScrollBox id="Wechat Box" imgSrc="Wechat.jpeg" platform="Wechat" />
+          </div>
         </div>
       </div>
     </div>

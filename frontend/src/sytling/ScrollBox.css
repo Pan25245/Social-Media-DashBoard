@@ -10,6 +10,13 @@
   gap: 20px; /* Adjust the gap between images in a row */
 }
 
+.scroll-box-container {
+  flex: 1; /* Take up available space */
+  width: 47vw;
+  border: 1px solid #ccc;
+  margin: 1vw;
+}
+
 .scroll-box {
   flex: 1; /* Take up available space */
   width: 47vw;
