@@ -4,32 +4,20 @@ import './ScrollBox.css';
 import { Element } from 'react-scroll';
 
 // ScrollBox.js
-const ScrollBox = ({ id, platform }) => (
+const ScrollBox = ({ id}) => (
   <Element name={id}>
     <div className="scroll-box">
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
-      <p>{platform}</p>
+      <p>Unknown Social Media</p>
+      <p>Unknown Social Media</p>
+      <p>Unknown Social Media</p>
+      <p>Unknown Social Media</p>
+      <p>Unknown Social Media</p>
+      <p>Unknown Social Media</p>
+      <p>Unknown Social Media</p>
+      <p>Unknown Social Media</p>
     </div>
   </Element>
 );
+
 
 export default ScrollBox;

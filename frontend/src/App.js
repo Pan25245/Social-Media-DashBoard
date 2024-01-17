@@ -1,72 +1,124 @@
 import React, { useEffect, useState } from 'react';
+import InstagramScrollBox from './sytling/InstagramScrollBox';
+import FacebookScrollBox from './sytling/FacebookScrollBox';
 import ScrollBox from './sytling/ScrollBox';
 
 function App() {
-  const [profile, setProfile] = useState({});
-  const [posts, setPosts] = useState([]);
+  const [twitterprofile, setTwitterProfile] = useState({});
+  const [instagramProfile, setInstagramProfile] = useState({});
+  const [instagramPosts, setInstagramPosts] = useState([]);
+  const [facebookProfile, setFacebookProfile] = useState({});
+  const [facebookPosts, setFacebookPosts] = useState([]);
 
   useEffect(() => {
-    async function fetchProfile() {
+    async function fetchTwitterProfile() {
       try {
-        const response = await fetch('http://localhost:5000/facebook/profile');
+        const response = await fetch('http://localhost:5000/twitter/profile');
         const data = await response.json();
-        setProfile(data);
+        setTwitterProfile(data)
       } catch (error) {
-        console.error('Error fetching profile:', error);
+          console.error('Error authenticating with Twitter:', error);
       }
     }
 
-    async function fetchPosts() {
+    async function fetchInstagramProfile() {
+      try {
+        const response = await fetch('http://localhost:5000/instagram/profile'); // Replace with your Instagram profile endpoint
+        const data = await response.json();
+        setInstagramProfile(data); // Update the Instagram profile state
+      } catch (error) {
+        console.error('Error fetching Instagram profile:', error);
+      }
+    }
+
+    // Fetch Instagram posts
+    async function fetchInstagramPosts() {
+      try {
+        const response = await fetch('http://localhost:5000/instagram/posts');
+        const data = await response.json();
+        setInstagramPosts(data); // Assuming your server returns posts data in the expected format
+      } catch (error) {
+        console.error('Error fetching Instagram posts:', error);
+      }
+    }
+
+    async function fetchFacebookProfile() {
+      try {
+        const response = await fetch('http://localhost:5000/facebook/profile'); // Replace with your Instagram profile endpoint
+        const data = await response.json();
+        setFacebookProfile(data); // Update the Instagram profile state
+      } catch (error) {
+        console.error('Error fetching Instagram profile:', error);
+      }
+    }
+
+    // Fetch Instagram posts
+    async function fetchFacebookPosts() {
       try {
         const response = await fetch('http://localhost:5000/facebook/posts');
         const data = await response.json();
-        setPosts(data);
+        setFacebookPosts(data); // Assuming your server returns posts data in the expected format
       } catch (error) {
-        console.error('Error fetching posts:', error);
+        console.error('Error fetching Instagram posts:', error);
       }
     }
 
-    fetchProfile();
-    fetchPosts();
+    fetchTwitterProfile();
+    fetchInstagramProfile();
+    fetchInstagramPosts();
+    fetchFacebookProfile();
+    fetchFacebookPosts();
   }, []);
 
   return (
     <div className="App">
       <h1>Social Media Dashboard</h1>
       <div>
-        <h2>Facebook Profile</h2>
-        <p>ID: {profile.id}</p>
-        <p>Name: {profile.name}</p>
+        <h2>Posts 欸嘿 der~ der~ der~ der~ der~ der~ der~</h2>
       </div>
       <div>
-        <h2>Posts 欸嘿 der~ der~ der~ der~ der~ der~ der~</h2>
-        <ul>
-          {posts.map(post => (
-            <li key={post.id}>
-              <strong>{post.title}</strong>: {post.content}
-            </li>
-          ))}
-        </ul>
+        <h2>Facebook Profile</h2>
+          <div>
+            <p>ID: {facebookProfile.id}</p>
+            <p>Name: {facebookProfile.name}</p>
+            <p>--------------------------------------------------------------------------------------</p>
+          </div>
+        <h2>Twitter Profile</h2>
+          <div>
+            {twitterprofile.user && (
+              <div>
+                <p>Name: {twitterprofile.user.name}</p>
+                <p>Username: {twitterprofile.user.screen_name}</p>
+              </div>
+            )}
+            <p>--------------------------------------------------------------------------------------</p>
+          </div>
+        <h2>Instagram Profile</h2>
+          <div>
+            <p>ID: {instagramProfile.id}</p>
+            <p>Name: {instagramProfile.username}</p>
+            <p>--------------------------------------------------------------------------------------</p>
+          </div>
       </div>
       <div className="container">
         <div className="row">
           <div className="scroll-box-container">
-            <p className="box-description">Facebook Scroll Box <img src={`Facebook.jpeg`} alt={`Facebook`} /></p>
-            <ScrollBox id="FaceBook Box" platform="Facebook" />
+            <p className="box-description">Facebook Scroll Box <img src={`Facebook.jpeg`} alt={`Facebook`}/></p>
+            <FacebookScrollBox id="FaceBook Box" posts={facebookPosts}/>
           </div>
           <div className="scroll-box-container">
-            <p className="box-description">Instagram Scroll Box <img src={`Insta.jpeg`} alt={`Insta`} /></p>
-            <ScrollBox id="Instagram Box" platform="Instagram" />
+            <p className="box-description">Instagram Scroll Box <img src={`Insta.jpeg`} alt={`Insta`}/></p>
+            <InstagramScrollBox id="Instagram Box" posts={instagramPosts}/>
           </div>
         </div>
         <div className="row">
           <div className="scroll-box-container">
-            <p className="box-description">QQ Scroll Box <img src={`QQ.jpeg`} alt={`QQ`} /></p>
-            <ScrollBox id="QQ Box" platform="QQ" />
+            <p className="box-description">Twitter Scroll Box <img src={`Twitter.jpeg`} alt={`Twitter`}/></p>
+            <ScrollBox id="Twitter Box"/>
           </div>
           <div className="scroll-box-container">
-            <p className="box-description">Wechat Scroll Box <img src={`Wechat.jpeg`} alt={`Wechat`} /></p>
-            <ScrollBox id="Wechat Box" platform="Wechat" />
+            <p className="box-description">Wechat Scroll Box <img src={`Wechat.jpeg`} alt={`Wechat`}/></p>
+            <ScrollBox id="Wechat Box"/>
           </div>
         </div>
       </div>
