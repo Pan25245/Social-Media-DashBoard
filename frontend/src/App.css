@@ -1,6 +1,33 @@
+.main-title {
+  text-align: left;
+  font-size: 2em; /* Larger title size */
+  color: black; /* A more subtle color */
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+
+
+
+body, html {
+  font-family: 'Arial', sans-serif; /* Use a modern sans-serif font */
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Light background for a modern look */
+}
+
 .App {
   text-align: center;
 }
+
+
+
+
+/* Profile and Posts Section */
+.profile-section, .posts-section {
+  margin-bottom: 30px;
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -34,5 +61,64 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+/* Scroll Box Styles */
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.scroll-box-container {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  background-color: white;
+}
+
+.box-description {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+
+.section-title {
+  font-size: 2em;
+  color: #34495e;
+  margin-bottom: 15px;
+}
+
+.profile-info, .post-info {
+  font-size: 1.2em;
+  color: #333;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
   }
 }

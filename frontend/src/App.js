@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import InstagramScrollBox from './sytling/InstagramScrollBox';
 import FacebookScrollBox from './sytling/FacebookScrollBox';
 import ScrollBox from './sytling/ScrollBox';
+import './App.css';
 
 function App() {
   const [twitterprofile, setTwitterProfile] = useState({});
@@ -72,32 +73,27 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Social Media Dashboard</h1>
+      <h1 className="main-title">Social Media Dashboard</h1>
       <div>
-        <h2>Posts 欸嘿 der~ der~ der~ der~ der~ der~ der~</h2>
-      </div>
-      <div>
-        <h2>Facebook Profile</h2>
-          <div>
+      <h2 className="section-title">Facebook Profile</h2>
+          <div className="profile-info">
             <p>ID: {facebookProfile.id}</p>
             <p>Name: {facebookProfile.name}</p>
-            <p>--------------------------------------------------------------------------------------</p>
           </div>
         <h2>Twitter Profile</h2>
           <div>
             {twitterprofile.user && (
-              <div>
+              <div className="profile-info">
                 <p>Name: {twitterprofile.user.name}</p>
                 <p>Username: {twitterprofile.user.screen_name}</p>
               </div>
             )}
-            <p>--------------------------------------------------------------------------------------</p>
           </div>
         <h2>Instagram Profile</h2>
-          <div>
+          <div className="profile-info">
             <p>ID: {instagramProfile.id}</p>
             <p>Name: {instagramProfile.username}</p>
-            <p>--------------------------------------------------------------------------------------</p>
+
           </div>
       </div>
       <div className="container">
