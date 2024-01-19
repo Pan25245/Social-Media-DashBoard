@@ -4,21 +4,23 @@ import './ScrollBox.css';  // Make sure to import your CSS file if needed
 import { Element } from 'react-scroll';
 
 const InstagramScrollBox = ({ id, posts }) => (
-  <Element name={id}>
-    <div className="scroll-box">
-      {posts.map((post, index) => (
-        <div key={post.id} className="instagram-post">
-          <p>Post: {index+1}</p>
-          <p>Caption: {post.caption}</p>
+  <Element name={id} className="social-scroll-box"> {/* Use a shared class name */}
+    {posts.map((post, index) => (
+      <div key={post.id} className="social-post"> {/* Use a shared class name */}
+        <div className="post-header">
+          <h3>Post {index + 1}</h3>
+        </div>
+        <p className="post-caption">{post.caption}</p>
+        {post.media_url && (
           <img 
             src={post.media_url} 
-            alt={post.caption} 
-            style={{ width: '50%', height: 'auto' }}
+            alt={`Post ${index + 1}`}
+            className="post-image"
           />
-          <p>--------------------------------------------------------------------</p>
-        </div>
-      ))}
-    </div>
+        )}
+        <div className="post-divider"></div>
+      </div>
+    ))}
   </Element>
 );
 

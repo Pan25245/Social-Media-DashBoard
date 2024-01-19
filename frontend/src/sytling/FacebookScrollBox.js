@@ -4,22 +4,33 @@ import './ScrollBox.css';  // Make sure to import your CSS file if needed
 import { Element } from 'react-scroll';
 
 const FacebookScrollBox = ({ id, posts }) => (
-  <Element name={id}>
-    <div className="scroll-box">
-      {posts.map((post, index) => (
-        <div key={post.id} className="facebook-post">
-          <p>Post: {index+1}</p>
-          <p>Caption: {post.message}</p>
+  <Element name={id} className="social-scroll-box">
+    {posts.map((post, index) => (
+      <div key={post.id} className="social-post">
+        <div className="post-header">
+          <h3>Post {index + 1}</h3>
+        </div>
+        <p className="post-caption">{post.message}</p>
+        {post.full_picture && (
           <img 
             src={post.full_picture} 
-            alt={post.id} 
-            style={{ width: '50%', height: 'auto' }}
+            alt={`Post ${index + 1}`}
+            className="post-image"
           />
-          <p>--------------------------------------------------------------------</p>
-        </div>
-      ))}
-    </div>
+        )}
+        <div className="post-divider"></div>
+      </div>
+    ))}
   </Element>
 );
 
 export default FacebookScrollBox;
+
+
+
+
+
+
+
+
+

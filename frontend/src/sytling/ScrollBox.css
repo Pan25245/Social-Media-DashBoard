@@ -13,14 +13,14 @@
 
 .scroll-box-container {
   flex: 1; /* Take up available space */
-  width: 47vw;
+  width: 20vw;
   margin: 1vw;
 }
 
 .scroll-box {
   flex: 1; /* Take up available space */
   height: 20vw;
-  width: 46vw;
+  width: 40vw;
   border: 1px solid #ccc;
   overflow-y: auto;
 }
@@ -29,4 +29,62 @@ img {
   width: 1.5em; /* Set the width of the image to 100% of the container */
   height: 1.5em;
   height: auto;
+}
+
+
+
+
+
+.social-scroll-box {
+  max-height: 400px; /* Set a fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 10px;
+}
+
+.social-post {
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.post-header h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.post-caption {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.post-image {
+  width: 100%; /* Full width of the post */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.post-divider {
+  height: 1px;
+  background-color: #ddd;
+  margin-top: 10px;
+}
+
+
+
+.no-content-message {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.error-list {
+  list-style: inside; /* Position bullets inside the list */
+  padding-left: 0; /* Remove default padding */
+}
+
+.error-list li {
+  margin-bottom: 5px; /* Space between list items */
 }

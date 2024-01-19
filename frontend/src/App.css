@@ -122,3 +122,89 @@ body, html {
     flex-direction: column;
   }
 }
+
+
+
+.scroll-boxes {
+  margin-top: 20px;
+}
+
+
+
+
+
+
+.platform-selection-box {
+  background-color: #fff; /* White background */
+  padding: 20px;
+  margin-right: auto;
+  margin-left: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  text-align: center; /* Center the text and icons */
+  max-width: 400px; /* Or any max-width that fits your design */
+}
+
+.platform-selection-text {
+  margin-bottom: 20px; /* Space between text and icons */
+  font-size: 1.2em; /* Larger text size */
+  color: #333; /* Dark grey color for text */
+}
+
+.platform-icons img {
+  cursor: pointer;
+  margin: 10px;
+  width: 40px; /* Adjust as needed */
+  height: auto;
+  /* You may add transition for a smooth effect on click or hover */
+}
+
+/* Continue with rest of your styles */
+
+
+
+
+.posts-container {
+  background-color: #fff; /* White background */
+  padding: 20px;
+  margin: 25px 0px 20px 20px; /* Adjust margins: top right bottom left */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  max-width: 600px; /* Or any max-width that fits your design */
+  min-height: 490px; /* Or any height that fits your design */
+  text-align: left; /* Align the text to the left */
+}
+
+
+
+
+
+
+
+.dashboard-container {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+
+.platform-selection-box, .profile-display-container {
+  width: 300px;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.platform-selection-box {
+  width: 300px;
+  flex: 1; /* Flex grow ratio */
+  margin-right: 10px; /* Additional margin to separate the two boxes */
+}
+
+.profile-display-container {
+
+  text-align: left;
+}
+
