@@ -79,7 +79,7 @@ body, html {
 
 .scroll-box-container {
   border: 1px solid #ddd;
-  padding: 15px;
+
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   background-color: white;
@@ -167,13 +167,17 @@ body, html {
 .posts-container {
   background-color: #fff; /* White background */
   padding: 20px;
-  margin: 25px 0px 20px 20px; /* Adjust margins: top right bottom left */
+  margin: 0px 0px 20px 20px; /* Adjust margins: top right bottom left */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
   max-width: 600px; /* Or any max-width that fits your design */
-  min-height: 490px; /* Or any height that fits your design */
+  min-height: 470px; /* Reduced height by 20px */
   text-align: left; /* Align the text to the left */
+  margin-top: -60px; /* Adjust the margin to move the container up */
+  margin-left: 20px;
+  position: relative;
 }
+
 
 
 
@@ -207,4 +211,168 @@ body, html {
 
   text-align: left;
 }
+
+
+
+
+
+
+
+
+.chat-interface {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.chat-messages {
+  height: 200px; /* Adjust as needed */
+  overflow-y: auto; /* Make chat scrollable */
+  margin-bottom: 10px;
+}
+
+/* Add styles for user-message and bot-message */
+.user-message {
+  text-align: right;
+  color: blue;
+}
+
+.bot-message {
+  text-align: left;
+  color: green;
+}
+
+
+
+
+.calendar-container {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: 300px; /* Adjust width as needed */
+  height: auto; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.todo-list-container {
+  background-color: #fff;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 500px; /* Same width */
+  height: 200px; /* Further reduced height */
+  overflow-y: auto;
+  text-align: left;
+}
+
+.todo-item {
+  display: list-item; /* Change to list-item for bullet points */
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  list-style: inside disc; /* Ensure bullet points are inside */
+}
+
+.todo-item:hover {
+  text-decoration: line-through;
+}
+
+.todo-text {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.todo-input {
+  width: 90%; /* Reduce width to 90% of the container */
+  padding: 10px;
+  margin: 10px auto; /* Center align the input field */
+  display: block; /* Ensure it's a block element */
+  border: 1px solid #ccc; /* Optional: add a border for better visibility */
+  border-radius: 4px; /* Optional: round the corners */
+}
+
+
+
+
+
+.snake-game-container {
+  width: 300px;
+  height: 300px;
+  margin: 50px 0px 10px 10px; /* Adjust margins to position correctly */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-column: 2 / 3;
+}
+
+.snake-game-board {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ddd;
+}
+
+.snake-segment {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color: green;
+}
+
+.food {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color: red;
+}
+
+
+
+
+
+
+.main-content {
+  display: grid;
+  grid-template-columns: auto 300px;
+  gap: 20px;
+
+
+}
+
+
+
+.game-container {
+  
+  margin-right: 200px; /* Keep the right margin */
+  margin-left: -200px; /* Shift the container to the left */
+  position: relative; /* Use relative positioning */
+  left: -50px; /* Adjust this value as needed to move more to the left */
+  width: 100%; /* Keep the width */
+  /* Other styling as needed */
+}
+
+
+
 

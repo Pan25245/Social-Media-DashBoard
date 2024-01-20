@@ -3,6 +3,8 @@ import InstagramScrollBox from './sytling/InstagramScrollBox';
 import FacebookScrollBox from './sytling/FacebookScrollBox';
 import ScrollBox from './sytling/ScrollBox';
 import './App.css';
+import SnakeGame from './snake';
+import TodoList from './todo';
 
 function App() {
   const [twitterprofile, setTwitterProfile] = useState({});
@@ -11,11 +13,28 @@ function App() {
   const [facebookProfile, setFacebookProfile] = useState({});
   const [facebookPosts, setFacebookPosts] = useState([]);
 
-
   const [selectedPlatform, setSelectedPlatform] = useState(null);
   const handlePlatformSelect = (platform) => {
     setSelectedPlatform(platform);
   };
+
+
+/* Chatbox backend code 
+  const [chatMessages, setChatMessages] = useState([]);
+  const [chatInput, setChatInput] = useState('');
+  const handleChatSubmit = async () => {
+    const message = chatInput;
+    setChatMessages([...chatMessages, { text: message, sender: 'user' }]);
+    setChatInput('');
+  
+    try {
+      const response = await axios.post('http://localhost:5000/send-message', { text: message });
+      setChatMessages(prev => [...prev, { text: response.data.reply, sender: 'bot' }]);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+*/
 
   useEffect(() => {
     async function fetchTwitterProfile() {
@@ -104,6 +123,8 @@ function App() {
 
     </div>
 
+    
+
     {/* Profile Display Container */}
     <div className="profile-display-container">
         {selectedPlatform === 'facebook' && facebookProfile && (
@@ -132,8 +153,18 @@ function App() {
         )}
         {!selectedPlatform && <p>Select a platform to view profile.</p>}
       </div>
-    
+        
+      <div >
+                    <TodoList />
+                </div>
+
       </div>
+
+
+    
+    
+
+      <div className="main-content">
     {/* Posts Container */}
     <div className="posts-container">
       <h2 className="posts-container-title">
@@ -148,8 +179,30 @@ function App() {
     
   
 
-
+    <div className="game-container">
+          <SnakeGame />
       </div>
+      </div>
+          {/* Chat Interface 
+    <div className="chat-interface">
+      <div className="chat-messages">
+        {chatMessages.map((msg, index) => (
+          <p key={index} className={msg.sender === 'user' ? 'user-message' : 'bot-message'}>
+            {msg.text}
+          </p>
+        ))}
+      </div>
+      <input 
+        type="text" 
+        value={chatInput} 
+        onChange={(e) => setChatInput(e.target.value)} 
+        onKeyDown={(e) => e.key === 'Enter' && handleChatSubmit()}
+      />
+      <button onClick={handleChatSubmit}>Send</button>
+    </div>
+*/}
+
+      </div> 
 );
 }
 
