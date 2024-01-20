@@ -2,6 +2,9 @@ from flask import Flask, jsonify, redirect, request
 from flask_cors import CORS
 from tweepy import OAuthHandler, API
 import requests
+from google.cloud import dialogflow
+import uuid
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -100,5 +103,43 @@ def get_instagram_posts():
         print("Instagram API Request Error:", error_response)  # Add this line for debugging
         return jsonify(error_response), 500
 
+
+# NOTE on Dialogflow Integration:
+# This application was initially set up to integrate Dialogflow via the backend. 
+#However, we have shifted to using Dialogflow Messenger directly through the website interface. 
+#This approach simplifies the implementation and allows us to leverage Dialogflow's built-in UI and functionalities without the need for backend integration. 
+#As a result, the commented-out code for Dialogflow session handling and message processing is no longer in use. 
+#This change enhances the maintainability of the code and relies on the robust, direct integration provided by Dialogflow Messenger.
+"""
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./ivory-analyst-411706-834cf219a593.json"
+
+# Create a unique identifier for the Dialogflow session
+session_id = uuid.uuid4()
+project_id = 'ivory-analyst-411706'  # Replace with your project ID
+
+@app.route('/send-message', methods=['POST'])
+def send_message():
+    text = request.json['text']
+    print("Received text: ", text)  # Debug print
+
+    try:
+        session_client = dialogflow.SessionsClient()
+        session = session_client.session_path(project_id, session_id)
+
+        text_input = dialogflow.TextInput(text=text, language_code="en")
+        query_input = dialogflow.QueryInput(text=text_input)
+
+        response = session_client.detect_intent(session=session, query_input=query_input)
+        reply = response.query_result.fulfillment_text
+        return jsonify({'reply': reply})
+    except Exception as e:
+        print("Error in Dialogflow interaction:", str(e))  # Debug print
+        return jsonify({'error': str(e)}), 500
+"""
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
+
