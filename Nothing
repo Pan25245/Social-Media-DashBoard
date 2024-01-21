@@ -1,0 +1,63 @@
+In App.js:
+
+fetch: fetch is a built-in JavaScript function used to make network requests, typically to retrieve data from a server (Flask application). 
+It returns a Promise that resolves to the Response object representing the response to the request. 
+In our code, fetch is used to send HTTP GET requests to the server endpoints of various social media platforms.
+
+await: The await keyword is used in an async function to pause the execution of the function until a Promise is resolved. 
+It allows you to work with asynchronous code in a more synchronous-like manner. 
+In our code, await is used with the fetch function to wait for the response from the server before proceeding with the next steps.
+
+useEffect Hook: The useEffect hook is part of React and is used for performing side effects in functional components. 
+It takes two arguments: a function to execute and an optional dependency array. 
+In your code, it's used to trigger data fetching when the component is mounted ([] means it runs once after the initial render). It's similar to the componentDidMount lifecycle method in class components.
+
+State: React's useState hook is used to define and manage state variables within functional components. 
+State allows you to store and manage data that can change over time. 
+In our code, we're using state variables like twitterprofile, instagramProfile, etc., to store and update data fetched from social media APIs.
+
+In App.py:
+
+Imported libraries - 
+
+    Flask: This module is used to create and run your web application.
+
+    jsonify: This function is used to convert Python dictionaries into JSON format for API responses.
+
+    redirect: Used for redirecting to other URLs if needed.
+
+    request: Allows you to access incoming HTTP request data.
+
+    Flask-CORS: This extension allows cross-origin resource sharing (CORS) for your Flask application, enabling it to accept requests from different domains.
+
+    tweepy: A Python library for interacting with the Twitter API.
+
+    requests: A library for making HTTP requests to external resources.
+
+    google.cloud.dialogflow: Used for integrating with Google Dialogflow, a natural language understanding platform.
+
+API (Application Programming Interface): An API is a set of rules and protocols that allows different software applications to communicate with each other. In this context, you're interacting with social media platforms' APIs to fetch data like profiles and posts. Each social media platform provides an API that allows you to request and retrieve data programmatically.
+
+API Access Tokens: credentials or keys that are used to authenticate and authorize access to an API (Application Programming Interface). 
+APIs are used by software applications to communicate with each other and access specific services or data. 
+Access tokens are a security mechanism to ensure that only authorized users or applications can interact with an API.
+
+
+Brief Explaination of Flask and React:
+
+    Flask:
+
+    Flask is a micro web framework for building web applications in Python.
+    It is known for its simplicity and minimalism, making it easy to get started with web development.
+    Flask provides the basic tools and features needed for web development, but it allows developers to choose and integrate additional libraries and components as needed.
+    Flask is often used for creating RESTful APIs, serving web pages, and handling HTTP requests and responses.
+    It's well-suited for small to medium-sized web applications and prototypes.
+
+    React:
+
+    React is a JavaScript library for building user interfaces, particularly for web applications with dynamic and interactive UIs.
+    It was developed and is maintained by Facebook.
+    React follows a component-based architecture, where UIs are composed of reusable components that manage their own state.
+    React uses a virtual DOM (Document Object Model) to efficiently update and render UI components, which leads to better performance.
+    React is often used in combination with other libraries and frameworks for building full-stack web applications.
+    It's popular for creating single-page applications (SPAs) and is widely adopted in the web development community.
