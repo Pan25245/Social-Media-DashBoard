@@ -57,19 +57,30 @@ flask run
 - Interact with the to-do list and the snake game as per your interest.
 - Communicate with the virtual social media assistant through the chat interface.
 
-Photos:
+## Images 
+
+Dashboard
+<br>
 <img src="frontend/public/Dashboard.png" alt="Dashboard Screenshot" width="600"/>
+
+
+<br>
+<br>
+
+Chat
+<br>
+<img src="frontend/public/Chat.png" alt="Dashboard Screenshot" width="300"/>
 
 ## Pros:
 - API Integration: Demonstrated capability in integrating and managing data from multiple social media APIs.
 - User Interface: Developed an intuitive UI for easy navigation and interaction with social media content.
 - Interactivity: Enabled real-time engagement with content, enhancing user experience.
 
-## Cons
-Token Management: The project initially used hardcoded tokens for API connections, a method more suited to a learning context than a production environment.
-Learning and Growth
+## Cons and Improvements to make
+Token Management:  Currently, the project relies on hardcoded tokens to establish API connections, which serves well for educational purposes. However, a more robust approach would involve implementing a mechanism for dynamically updating these tokens to enhance security and scalability.
+
+Chat Functionality: The existing chat functionality utilizes a pre-set Dialogflow messenger widget, providing a series of predetermined prompts and responses. This serves to showcase fundamental interaction capabilities adequately. Nonetheless, the project aims to evolve towards a more complex chat system that establishes direct communication with the backend. Although an attempt was made to integrate a real-time messaging feature, where messages would be dynamically processed via the backend (dialogflow) to enable tailored user interactions, challenges were encountered, preventing its successful implementation. Future efforts will focus on overcoming these obstacles to achieve a fully interactive and responsive chat experience.
+
 
 ## Conclusion
-Through this project, understanding of API integration and UI design was deepned. The challenge of hardcoded tokens was a valuable lesson in the importance of scalable and secure authentication methods for future developments.
-
-This endeavor was a substantial learning experience, pushing the boundaries of our technical knowledge and preparing us for future professional challenges. We're committed to evolving our approach, particularly in areas like authentication, to ensure our work is both effective and secure.
+Through this project, understanding of API integration and UI design was deepned. The challenge of hardcoded tokens was a valuable lesson in the importance of scalable and secure authentication methods for future developments. Further learning is required on google's cloud API. Overall, the project was quite successful.
