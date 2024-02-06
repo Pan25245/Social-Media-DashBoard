@@ -58,7 +58,7 @@ flask run
 - Communicate with the virtual social media assistant through the chat interface.
 
 Photos:
-<img src="images/dashboard.png" alt="Dashboard Screenshot" width="600"/>
+<img src="frontend/public/Dashboard.png" alt="Dashboard Screenshot" width="600"/>
 
 ## Pros:
 - API Integration: Demonstrated capability in integrating and managing data from multiple social media APIs.
