@@ -11,7 +11,7 @@ This project is a comprehensive Social Media Dashboard that integrates various s
 ## Installations 
 1. Clone repository
 ```
-git clone <repository-url>
+git clone https://github.com/Pan25245/Social-Media-DashBoard.git
 ```
 2. Set up frontend
 Navigate to the frontend directory and install dependencies:
