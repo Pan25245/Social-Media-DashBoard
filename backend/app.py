@@ -6,22 +6,30 @@ from google.cloud import dialogflow
 import uuid
 import os
 
+# Create a Flask web application
 app = Flask(__name__)
+# Enable Cross-Origin Resource Sharing (CORS) to allow communication with frontend from different origins
 CORS(app)
 
 # https://developers.facebook.com/tools/explorer/ Go to this site for a short life Access Token
 # https://developers.facebook.com/tools/debug/accesstoken/ Then go to this site and debugg the short term Access Token to recieve a Longer one
 
+# Facebook API Access Token
 ACCESS_TOKEN = 'EAAFpHkiutr8BO6jlZBlwHfNNYwJhDeV87hFOKEa9Tg9ULCrfYuhuvZBlXPYeRWclwGgrxdotcXFtea1RsnBVMb0kZCcLyWcqqZCC08l02nuiCrmQLt6gsqQXjGrxPWkdZCwuZAmpW9xA5q6P3pvWhUBHojwZCmHH31t95DZBVLpV5ozylq1xnE6v1o8b'
 
+# Define the route for fetching Facebook profile information
+# Flask is defining a new endpoint or URL path that can be accessed by a client (such as a web browser or another program) to retrieve Facebook posts.
 @app.route('/facebook/profile')
 def get_facebook_profile():
+    # Construct the Facebook Graph API URL to fetch user profile
     api_url = f'https://graph.facebook.com/me?fields=id,name&access_token={ACCESS_TOKEN}'
     
     try:
+         # Make an HTTP GET request to the Facebook API
         response = requests.get(api_url)
 
         if response.status_code == 200:
+            # Parse the JSON response and return the user profile data as JSON
             data = response.json()
             return jsonify(data)
         else:
@@ -30,12 +38,14 @@ def get_facebook_profile():
     except requests.RequestException as e:
         return jsonify({'error': str(e)}), 500
     
-    
+# Define the route for fetching Facebook posts
 @app.route('/facebook/posts')
 def get_facebook_posts():
+    # Construct the Facebook Graph API URL to fetch user posts
     api_url = f'https://graph.facebook.com/me/feed?fields=id,message,full_picture&access_token={ACCESS_TOKEN}'
     
     try:
+        # Make an HTTP GET request to the Facebook API
         response = requests.get(api_url)
 
         if response.status_code == 200:
@@ -47,24 +57,29 @@ def get_facebook_posts():
     except requests.RequestException as e:
         return jsonify({'error': str(e)}), 500
 
+# Twitter API credentials
 twitter_api_key = '3qZMOMWRY95zWe06hscYXSXyD'
 twitter_api_secret_key = 'ivTfqZVPYegcRwMsQJmME9kiK0wzBRoRoTJWAZ0Dhil3oYwPdD'
 twitter_access_token = '1744669199459622912-KI1Hl7XnmSfooMNymFfSCofc3sJTqm'
 twitter_access_token_secret = 'CgslytGHRkayveQ4xEeTMu2VxoevF5dGGaQjqGzAV75Dx'
 
+# Set up Twitter API authentication using Tweepy
 auth = OAuthHandler(twitter_api_key, twitter_api_secret_key)
 auth.set_access_token(twitter_access_token, twitter_access_token_secret)
 api = API(auth)
 
 @app.route('/twitter/profile')
 def get_twitter_profile():
+    # Get the OAuth verifier from the request URL
     verifier = request.args.get('oauth_verifier')
     try:
+        # Verify and retrieve the user's profile information using the authenticated API client
         user = api.verify_credentials()  # Retrieve user's profile information
         return jsonify({'user': user._json})
     except Exception as e:
         return jsonify({'error': str(e)})
     
+# Define Instagram Access Token
 INSTAGRAM_ACCESS_TOKEN = 'IGQWRPMHpISjhGd2NEX2I2NGgyUWJCb1A4TEFjNVF1Y1JXd201RG5hbGR4RUVncmZAUemU4bGJNWW1yd0wyeGFNQndfb0RLRWhXSkVJTDZANM1pmakMyNDVVS1JXeDI0NlFDN3pCQkdkWmRwOXpMX3ZAQZAU1SanNDZAWcZD'
 
 @app.route('/instagram/profile')

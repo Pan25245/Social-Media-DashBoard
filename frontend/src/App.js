@@ -7,13 +7,17 @@ import SnakeGame from './snake';
 import TodoList from './todo';
 
 function App() {
+  // State variables for storing data fetched from various social media platforms
   const [twitterprofile, setTwitterProfile] = useState({});
   const [instagramProfile, setInstagramProfile] = useState({});
   const [instagramPosts, setInstagramPosts] = useState([]);
   const [facebookProfile, setFacebookProfile] = useState({});
   const [facebookPosts, setFacebookPosts] = useState([]);
 
+  // State variable to keep track of the selected social media platform
   const [selectedPlatform, setSelectedPlatform] = useState(null);
+
+  // Function to handle the selection of a social media platform
   const handlePlatformSelect = (platform) => {
     setSelectedPlatform(platform);
   };
@@ -36,17 +40,24 @@ function App() {
   };
 */
 
+  // The 'useEffect' hook is used for performing side effects in your components.
+  // In this case, it's used to fetch data when the component is mounted.
   useEffect(() => {
+    // Asynchronously fetch Twitter profile data from the server
     async function fetchTwitterProfile() {
       try {
+        // Send a GET request to the Twitter profile endpoint
         const response = await fetch('http://localhost:5000/twitter/profile');
+        // Parse the response as JSON
         const data = await response.json();
+        // Update the 'twitterprofile' state with the fetched data
         setTwitterProfile(data)
       } catch (error) {
           console.error('Error authenticating with Twitter:', error);
       }
     }
 
+    // Similar functions for fetching Instagram and Facebook data
     async function fetchInstagramProfile() {
       try {
         const response = await fetch('http://localhost:5000/instagram/profile'); // Replace with your Instagram profile endpoint
@@ -89,12 +100,13 @@ function App() {
       }
     }
 
+    // Invoke the data fetching functions when the component is mounted
     fetchTwitterProfile();
     fetchInstagramProfile();
     fetchInstagramPosts();
     fetchFacebookProfile();
     fetchFacebookPosts();
-  }, []);
+  }, []); // The empty dependency array [] ensures this effect runs only once after the initial render
 
   return (
     <div className="App">
